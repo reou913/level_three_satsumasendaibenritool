@@ -1,0 +1,88 @@
+{
+ "title": "緊急・相談の電話番号",
+ "items": [
+  {
+   "number": "119",
+   "label": "火事・救急",
+   "note": "火事のとき、急な病気やけがで救急車が必要なとき",
+   "group": "緊急",
+   "source": "全国共通の番号",
+   "source_url": "",
+   "checked": ""
+  },
+  {
+   "number": "110",
+   "label": "警察（事件・事故）",
+   "note": "事件や事故にあったとき、見たとき",
+   "group": "緊急",
+   "source": "全国共通の番号",
+   "source_url": "",
+   "checked": ""
+  },
+  {
+   "number": "118",
+   "label": "海の事故（海上保安庁）",
+   "note": "海での事故や、事故を見たとき",
+   "group": "緊急",
+   "source": "全国共通の番号",
+   "source_url": "",
+   "checked": ""
+  },
+  {
+   "number": "#8000",
+   "alt": "099-254-1186",
+   "label": "子どもの急な病気の電話相談（鹿児島県 小児救急電話相談）",
+   "note": "おおむね15歳未満の子どもの保護者など。平日・土曜日は19時～翌朝8時、日曜・祝日・年末年始は8時～翌朝8時。ダイヤル式電話・光電話・IP電話からは 099-254-1186",
+   "group": "相談",
+   "source": "鹿児島県「小児救急電話相談」",
+   "source_url": "https://www.pref.kagoshima.jp/ae08/kenko-fukushi/kenko-iryo/kikan/chikiiryou/kyukyudenwa.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "number": "(27)1199",
+   "tel": "0996271199",
+   "label": "消防テレフォンサービス",
+   "note": "救急当番医の急な変更も確認できる",
+   "group": "相談",
+   "source": "デジタル広報薩摩川内「救急当番医などのお知らせ」",
+   "source_url": "https://koho-satsumasendai.jp/emergency/202511",
+   "checked": "2026-11-12"
+  },
+  {
+   "number": "#9110",
+   "label": "警察の相談窓口",
+   "note": "緊急ではない困りごとの相談",
+   "group": "相談",
+   "source": "全国共通の番号",
+   "source_url": "",
+   "checked": ""
+  },
+  {
+   "number": "189",
+   "label": "児童相談所（いちはやく）",
+   "note": "子どもへの虐待かもと思ったとき、子育ての悩み",
+   "group": "相談",
+   "source": "全国共通の番号",
+   "source_url": "",
+   "checked": ""
+  },
+  {
+   "number": "188",
+   "label": "消費者ホットライン",
+   "note": "契約や悪質商法などのトラブル",
+   "group": "相談",
+   "source": "全国共通の番号",
+   "source_url": "",
+   "checked": ""
+  },
+  {
+   "number": "0996-23-5111",
+   "label": "薩摩川内市役所（代表）",
+   "note": "",
+   "group": "市役所",
+   "source": "薩摩川内市「救急当番医」",
+   "source_url": "https://www.city.satsumasendai.lg.jp/soshiki/1224/1226/2/1/9730.html",
+   "checked": "2026-11-12"
+  }
+ ]
+}

@@ -1,0 +1,282 @@
+{
+ "title": "ごみの出し方",
+ "year": "令和8年度",
+ "rules": [
+  {
+   "region": "本土",
+   "label": "燃やせるごみ",
+   "text": "指定袋（透明）に入れ、収集日当日の朝8時までに、決められた収集所へ。生ごみは水気をよく切り、袋の口をしっかりしばる。廃油は固めるか、古布などに吸わせる。",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "label": "収集されないもの",
+   "text": "燃やせないごみや不適物がまざった袋、中身が見えない袋、指定外の袋は収集されません。",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "label": "収集所の場所",
+   "text": "収集所の場所は、自治会長などに確認してください。",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "甑島",
+   "label": "燃やせるごみ",
+   "text": "指定袋（透明）に入れ、収集日当日の朝8時までに、決められた収集所へ。",
+   "source_url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "甑島",
+   "label": "燃やせないごみ",
+   "text": "指定袋（赤）に入れ、収集日当日の朝8時までに、決められた収集所へ。",
+   "source_url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "甑島",
+   "label": "資源ごみ",
+   "text": "きちんと分別し、自治会で決められた日時に、決められた資源ごみステーションへ。日時と場所は自治会長などに確認してください。",
+   "source_url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  }
+ ],
+ "calendars": [
+  {
+   "region": "本土",
+   "district": "川内地区",
+   "towns": "神田町、西開聞町、西向田町、東開聞町、東向田町、冷水町、宮里町、向田町、向田本町、若松町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/sendai2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "隈之城地区",
+   "towns": "青山町、尾白江町、勝目町、川永野町、隈之城町、木場茶屋町、中福良町、都町、宮崎町（字古川、沖玉を除く）、矢倉町、山之口町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/kumanojyou2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "平佐西地区",
+   "towns": "天辰町、白和町、田崎町、鳥追町、永利町（字倉谷、小牟田原、辰口、南川）、宮崎町（字古川、沖玉）、平佐一丁目、平佐町、横馬場町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/hirasanisi2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "永利地区",
+   "towns": "永利町（字倉谷、小牟田原、辰口、南川を除く）、百次町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/nagatosi2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "可愛地区",
+   "towns": "大小路町、上川内町、国分寺町、御陵下町、大王町、高城町（字後牟田）、原田町（市道隈之城・高城線以西）、東大小路町、若葉町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/eno2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "亀山・水引・陽成・湯田・西方地区",
+   "towns": "網津町、小倉町、五代町、西方町、花木町、水引町、港町、宮内町、湯島町、湯田町、陽成町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/kameyamahoka2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "育英・峰山・滄浪・寄田地区",
+   "towns": "久見崎町、高江町、中郷一丁目、中郷二丁目、中郷三丁目、中郷四丁目、中郷五丁目、中郷町、原田町（市道隈之城・高城線以東）",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/ikuei2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "高来地区",
+   "towns": "高城町（字後牟田を除く）",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/takaki2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "平佐東・八幡地区",
+   "towns": "久住町、楠元町、白浜町、田海町、中村町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/hirasahigasihoka2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "城上・吉川地区",
+   "towns": "城上町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/jyoukamikitikawa2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "本土",
+   "district": "東郷地域",
+   "towns": "東郷町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/tougou2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12",
+   "towns_note": "町名の一覧はページにないため、地域名で検索できるようにしています"
+  },
+  {
+   "region": "本土",
+   "district": "入来地域",
+   "towns": "入来町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/iriki2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12",
+   "towns_note": "町名の一覧はページにないため、地域名で検索できるようにしています"
+  },
+  {
+   "region": "本土",
+   "district": "樋脇地域",
+   "towns": "樋脇町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/hiwaki2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12",
+   "towns_note": "町名の一覧はページにないため、地域名で検索できるようにしています"
+  },
+  {
+   "region": "本土",
+   "district": "祁答院地域",
+   "towns": "祁答院町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/kedouinn2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12",
+   "towns_note": "町名の一覧はページにないため、地域名で検索できるようにしています"
+  },
+  {
+   "region": "甑島",
+   "district": "里地区",
+   "towns": "里町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/sato2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "甑島",
+   "district": "上甑地区",
+   "towns": "上甑町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/kamikosiki2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "甑島",
+   "district": "下甑・鹿島地区（長浜・瀬々野浦・内川内・鹿島）",
+   "towns": "下甑町（長浜・瀬々野浦・内川内）、鹿島町",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/nagahama2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "region": "甑島",
+   "district": "下甑地区（手打・片野浦・青瀬）",
+   "towns": "下甑町（手打・片野浦・青瀬）",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/teuti2026.pdf",
+   "source_url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  }
+ ],
+ "handbooks": [
+  {
+   "label": "日本語版（1）",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/gominobunnbetuhanndobukkunihonngobann-1.pdf",
+   "size": "5.3MB"
+  },
+  {
+   "label": "日本語版（2）",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/gominobunnbetuhanndobukkunihonngobann-2.pdf",
+   "size": "15.1MB"
+  },
+  {
+   "label": "English",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/gominobunnbetuhanndobukku_english.pdf",
+   "size": "3.3MB"
+  },
+  {
+   "label": "中文",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/gominobunnbetuhanndobukku_chinese.pdf",
+   "size": "3.7MB"
+  },
+  {
+   "label": "Bahasa Indonesia",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/gominobunnbetuhanndobukku_indonesian.pdf",
+   "size": "3.2MB"
+  },
+  {
+   "label": "Tiếng Việt",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/gominobunnbetuhanndobukku_vientnamese.pdf",
+   "size": "3.2MB"
+  },
+  {
+   "label": "မြန်မာ（ミャンマー語）",
+   "url": "https://www.city.satsumasendai.lg.jp/material/files/group/14/gominobunnbetuhanndobukku_burmese.pdf",
+   "size": "3.1MB"
+  }
+ ],
+ "handbooks_source": {
+  "url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+  "checked": "2026-11-12"
+ },
+ "bulky": {
+  "title": "粗大ごみ・持ち込み",
+  "text": "粗大ごみの詳しい出し方は、ごみの分別ハンドブックとごみ出しカレンダーを見てください。家庭のごみを川内クリーンセンターに直接持ち込むときは、手数料がかかります。",
+  "fees": [
+   {
+    "label": "100kg以下",
+    "fee": "300円"
+   },
+   {
+    "label": "100kgを超えるとき",
+    "fee": "100kgを超えるごとに300円を加算（100kg未満の端数は100kgとみなす）"
+   }
+  ],
+  "unknown": "クリーンセンターの住所・受付時間・休業日は、このページに書かれていません。",
+  "contact": {
+   "label": "問い合わせ：市民安全部 環境課 廃棄物政策グループ",
+   "phone": "0996-23-5111"
+  },
+  "source_url": "https://www.city.satsumasendai.lg.jp/soshiki/1005/1/2/2/2837.html",
+  "checked": "2026-11-12"
+ },
+ "links": [
+  {
+   "label": "家庭ごみの分け方・出し方（本土）",
+   "url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/5652.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "label": "家庭ごみの分け方・出し方（甑島）",
+   "url": "https://www.city.satsumasendai.lg.jp/lifescene/gomi_kankyo/1/5332.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "label": "ごみ処理（持ち込みの手数料）",
+   "url": "https://www.city.satsumasendai.lg.jp/soshiki/1005/1/2/2/2837.html",
+   "checked": "2026-11-12"
+  },
+  {
+   "label": "電池など発火しやすいごみの分け方",
+   "url": "https://www.city.satsumasendai.lg.jp/kurashi_tetsuzuki/gomi_recycle/1/1/16151.html",
+   "checked": ""
+  }
+ ]
+}

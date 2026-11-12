@@ -1,0 +1,21 @@
+{
+  "title": "夜間・休日の病院（救急当番医）",
+  "about": "救急当番医は日によって変わるので、このサイトでは一覧を載せず、毎月の当番医が載っているページを案内します。",
+  "links": [
+    { "label": "今月の救急当番医（デジタル広報薩摩川内）", "url": "https://koho-satsumasendai.jp/emergency/", "monthly": true, "note": "日付・病院名・診療科・電話がわかります", "checked": "2026-11-12" },
+    { "label": "救急当番医（薩摩川内市）", "url": "https://www.city.satsumasendai.lg.jp/soshiki/1224/1226/2/1/9730.html", "note": "市のページ。毎月更新されます", "checked": "2026-11-12" },
+    { "label": "当番医（薩摩川内市消防局）", "url": "https://www.satsumasendai-fd.jp/hp/toubani_1.php", "note": "", "checked": "" }
+  ],
+  "rules": [
+    { "label": "夜間", "text": "原則18時～23時。受診する前に、かならず電話で連絡してください。", "source_url": "https://www.city.satsumasendai.lg.jp/soshiki/1224/1226/2/1/9730.html", "checked": "2026-11-12" },
+    { "label": "昼間（休日）", "text": "8時30分～18時。小児科は各施設の診療時間です。", "source_url": "https://koho-satsumasendai.jp/emergency/202511", "checked": "2026-11-12" },
+    { "label": "休日の歯科", "text": "受け付けは9時～12時です。", "source_url": "https://koho-satsumasendai.jp/emergency/202511", "checked": "2026-11-12" },
+    { "label": "子どもの夜間", "text": "医師会立市民病院の平日夜間の当番日の小児診療は、事前に電話で問い合わせてください。", "source_url": "https://koho-satsumasendai.jp/emergency/202511", "checked": "2026-11-12" },
+    { "label": "急な変更", "text": "当番医は急に変わることがあります。受診の前に医療機関へ連絡してください。消防テレフォンサービス（27）1199 でも確認できます。", "source_url": "https://koho-satsumasendai.jp/emergency/202511", "checked": "2026-11-12" },
+    { "label": "利用について", "text": "救急当番医の利用は、急患・重症の人に限ります。夜間は応急処置が中心なので、体調が悪いときは早めに昼間のかかりつけ医へ。", "source_url": "https://koho-satsumasendai.jp/emergency/202511", "checked": "2026-11-12" }
+  ],
+  "contact": { "label": "問い合わせ：健康保険部 保健政策課 地域医療グループ", "phone": "0996-23-5111", "source_url": "https://www.city.satsumasendai.lg.jp/soshiki/1224/1226/2/1/9730.html", "checked": "2026-11-12" },
+  "related": [
+    { "label": "川内市医師会立市民病院", "url": "https://sendaihp.jp/", "checked": "" }
+  ]
+}

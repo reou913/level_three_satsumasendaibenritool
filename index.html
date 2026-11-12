@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F2F5F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111615" media="(prefers-color-scheme: dark)">
+<title>薩摩川内くらしの便利帳</title>
+<meta name="description" content="薩摩川内市の緊急の電話番号、夜間・休日の病院、保育園・幼稚園、子育て、ごみの出し方をまとめたページです。暮らしの要望も投稿できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F2F5F4;
+    --surface: #FFFFFF;
+    --field: #EEF2F1;
+    --ink: #17201E;
+    --sub: #62706C;
+    --line: #DFE6E4;
+    --accent: #0B8A7A;
+    --accent-soft: #E3F4F1;
+    --on-accent: #FFFFFF;
+    --sos: #E03131;
+    --sos-soft: #FFF0F0;
+    --on-sos: #FFFFFF;
+    --warn: #C05A00;
+    --warn-soft: #FFF4E6;
+    --scrim: rgba(17, 22, 21, .5);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111615;
+      --surface: #1A2120;
+      --field: #232C2A;
+      --ink: #EEF3F2;
+      --sub: #97A6A2;
+      --line: #2A3431;
+      --accent: #3CC9B4;
+      --accent-soft: #15302B;
+      --on-accent: #06201C;
+      --sos: #FF6B6B;
+      --sos-soft: #3A1C1E;
+      --on-sos: #2A0B0C;
+      --warn: #FFA94D;
+      --warn-soft: #33230F;
+      --scrim: rgba(0, 0, 0, .6);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", "Meiryo", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  svg { flex-shrink: 0; }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 16px 16px calc(48px + env(safe-area-inset-bottom)); }
+
+  /* ヘッダー */
+  .hero { background: var(--surface); border-radius: 32px; padding: 26px 22px 22px; }
+  .hero h1 { margin: 0; font-size: clamp(1.6rem, 7vw, 2.4rem); font-weight: 900; line-height: 1.25; letter-spacing: -.01em; }
+  .hero h1 small { display: block; font-size: .8125rem; font-weight: 700; color: var(--accent); letter-spacing: .08em; margin-bottom: 4px; }
+  .lead { margin: 8px 0 0; color: var(--sub); }
+  .sos-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+  .sos {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--sos); color: var(--on-sos);
+    border-radius: 20px; padding: 12px 16px; text-decoration: none;
+  }
+  .sos b { font-size: 1.75rem; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
+  .sos span { font-size: .8125rem; font-weight: 700; line-height: 1.3; }
+  .sos svg { width: 22px; height: 22px; }
+
+  /* メニュー */
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+  .tile {
+    background: var(--surface); border-radius: 24px; padding: 16px 12px 14px;
+    text-decoration: none; display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+    min-height: 108px; transition: transform .08s;
+  }
+  .tile:active { transform: scale(.97); }
+  .tile .ic { width: 40px; height: 40px; border-radius: 14px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+  .tile .ic svg { width: 22px; height: 22px; }
+  .tile.is-sos .ic { background: var(--sos-soft); color: var(--sos); }
+  .tile b { font-size: .9375rem; font-weight: 900; line-height: 1.35; }
+
+  /* 上に固定する目次 */
+  .jump {
+    position: sticky; top: 0; z-index: 10;
+    margin: 16px -16px 0; padding: 10px 16px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+  }
+  .jump::-webkit-scrollbar { display: none; }
+  .jump a {
+    flex: none; text-decoration: none; font-size: .875rem; font-weight: 700;
+    padding: 6px 14px; border-radius: 999px; background: var(--surface);
+  }
+
+  /* セクション */
+  section.card { background: var(--surface); border-radius: 28px; padding: 22px 20px; margin-top: 16px; }
+  section.card > h2 { margin: 0; font-size: 1.375rem; font-weight: 900; line-height: 1.35; display: flex; align-items: center; gap: 10px; }
+  section.card > h2 .ic { width: 36px; height: 36px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+  section.card > h2 .ic svg { width: 20px; height: 20px; }
+  section.card.is-sos > h2 .ic { background: var(--sos-soft); color: var(--sos); }
+  .about { margin: 8px 0 0; color: var(--sub); font-size: .9375rem; }
+  h3 { margin: 22px 0 10px; font-size: 1.0625rem; font-weight: 900; }
+
+  /* 電話の行 */
+  .tels { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+  .tel-item { display: flex; align-items: center; gap: 12px; padding: 12px 12px 12px 16px; border-radius: 18px; background: var(--field); }
+  .tel-item .body { flex: 1; min-width: 0; }
+  .tel-item .label { font-weight: 700; line-height: 1.45; }
+  .tel-item .note { font-size: .8125rem; color: var(--sub); margin-top: 2px; line-height: 1.6; }
+  .tel-btn {
+    flex: none; display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent); color: var(--on-accent); text-decoration: none;
+    border-radius: 999px; padding: 8px 14px; font-weight: 900; font-variant-numeric: tabular-nums;
+    min-height: 44px; white-space: nowrap;
+  }
+  .tel-btn svg { width: 16px; height: 16px; }
+  .tel-btn.is-sos { background: var(--sos); color: var(--on-sos); }
+  .group-label { font-size: .8125rem; font-weight: 700; color: var(--sub); margin: 18px 0 0; }
+
+  /* リンクのボタン */
+  .links { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+  .link-item {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+    padding: 12px 16px; border-radius: 18px; background: var(--field); min-height: 56px;
+  }
+  .link-item .body { flex: 1; min-width: 0; }
+  .link-item b { display: block; font-weight: 700; line-height: 1.45; }
+  .link-item small { display: block; color: var(--sub); font-size: .8125rem; line-height: 1.55; margin-top: 2px; }
+  .link-item svg { width: 18px; height: 18px; color: var(--sub); }
+  .link-item.is-main { background: var(--accent); color: var(--on-accent); }
+  .link-item.is-main small, .link-item.is-main svg { color: inherit; opacity: .85; }
+
+  /* 説明のリスト */
+  .rules { margin: 14px 0 0; display: grid; gap: 8px; }
+  .rule { display: grid; grid-template-columns: 6.5em 1fr; gap: 10px; padding: 12px 14px; border-radius: 16px; background: var(--field); font-size: .9375rem; }
+  .rule dt { font-weight: 900; }
+  .rule dd { margin: 0; }
+  @media (max-width: 480px) { .rule { grid-template-columns: 1fr; gap: 2px; } }
+
+  /* 絞り込み */
+  .search { position: relative; margin-top: 16px; }
+  .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--sub); }
+  .search input {
+    width: 100%; border: none; border-radius: 16px; background: var(--field);
+    padding: 12px 14px 12px 44px; font-size: 1rem; min-height: 48px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip {
+    border: none; border-radius: 999px; padding: 6px 12px; background: var(--field);
+    font-size: .875rem; font-weight: 700; min-height: 36px;
+  }
+  .chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+  .chip .n { font-weight: 500; opacity: .75; margin-left: 4px; font-variant-numeric: tabular-nums; }
+  .result-count { margin: 14px 0 0; font-size: .875rem; color: var(--sub); font-weight: 700; }
+
+  /* 施設のカード */
+  .places { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+  .place { border: 1px solid var(--line); border-radius: 20px; padding: 14px 16px; }
+  .place .top { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .badge { font-size: .75rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+  .badge.gray { background: var(--field); color: var(--sub); }
+  .place h4 { margin: 6px 0 0; font-size: 1.0625rem; font-weight: 900; line-height: 1.45; }
+  .place .addr { margin: 4px 0 0; font-size: .875rem; color: var(--sub); }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .fact { font-size: .8125rem; padding: 4px 10px; border-radius: 10px; background: var(--field); }
+  .fact b { font-weight: 700; margin-right: 4px; color: var(--sub); }
+  .place .note { margin: 8px 0 0; font-size: .8125rem; padding: 8px 10px; border-radius: 12px; background: var(--warn-soft); }
+  .place .acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .btn-soft {
+    display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+    border-radius: 999px; padding: 8px 14px; font-weight: 700; font-size: .875rem;
+    background: var(--field); min-height: 44px;
+  }
+  .btn-soft svg { width: 16px; height: 16px; }
+  .more { display: block; width: 100%; margin-top: 10px; border: none; border-radius: 999px; padding: 12px; background: var(--field); font-weight: 700; min-height: 48px; }
+  .empty { margin: 14px 0 0; padding: 16px; border-radius: 16px; background: var(--field); color: var(--sub); text-align: center; }
+
+  /* ごみ */
+  .seg { display: inline-flex; background: var(--field); border-radius: 999px; padding: 4px; margin-top: 16px; }
+  .seg button { border: none; background: none; border-radius: 999px; padding: 6px 18px; font-weight: 700; min-height: 36px; }
+  .seg button[aria-pressed="true"] { background: var(--surface); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .cal-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+  .cal { display: flex; align-items: center; gap: 12px; padding: 12px 12px 12px 16px; border-radius: 18px; background: var(--field); }
+  .cal .body { flex: 1; min-width: 0; }
+  .cal b { display: block; font-weight: 900; line-height: 1.45; }
+  .cal small { display: block; font-size: .8125rem; color: var(--sub); line-height: 1.6; }
+  .cal mark { background: var(--accent-soft); color: inherit; border-radius: 4px; padding: 0 2px; }
+  .pdf-btn {
+    flex: none; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+    background: var(--accent); color: var(--on-accent); border-radius: 999px; padding: 8px 14px;
+    font-weight: 700; font-size: .875rem; min-height: 44px; white-space: nowrap;
+  }
+  .pdf-btn svg { width: 16px; height: 16px; }
+  .hb { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  table.fees { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: .9375rem; }
+  table.fees th, table.fees td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.fees th { font-weight: 700; width: 40%; }
+
+  /* 要望 */
+  .warn-box { margin: 14px 0 0; padding: 14px 16px; border-radius: 18px; background: var(--warn-soft); font-size: .9375rem; }
+  .warn-box ul { margin: 6px 0 0; padding-left: 1.2em; }
+  form.post { margin-top: 16px; display: grid; gap: 14px; }
+  .field label { display: block; font-weight: 700; font-size: .9375rem; margin-bottom: 6px; }
+  .field label small { font-weight: 500; color: var(--sub); margin-left: 6px; }
+  .field input, .field select, .field textarea {
+    width: 100%; border: 2px solid transparent; border-radius: 16px; background: var(--field);
+    padding: 12px 14px; font-size: 1rem; min-height: 48px;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
+  .field textarea { min-height: 140px; resize: vertical; line-height: 1.7; }
+  .counter { text-align: right; font-size: .8125rem; color: var(--sub); margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .counter.over { color: var(--sos); font-weight: 700; }
+  .submit {
+    border: none; border-radius: 999px; padding: 14px 20px; font-weight: 900; font-size: 1rem;
+    background: var(--accent); color: var(--on-accent); min-height: 52px;
+  }
+  .submit:disabled { opacity: .5; cursor: not-allowed; }
+  .msg { padding: 12px 14px; border-radius: 16px; font-size: .9375rem; }
+  .msg.ok { background: var(--accent-soft); }
+  .msg.ng { background: var(--sos-soft); }
+  .posts { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+  .post-item { border: 1px solid var(--line); border-radius: 20px; padding: 14px 16px; }
+  .post-item .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .8125rem; color: var(--sub); }
+  .post-item p { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+  /* 出典 */
+  .src { margin: 16px 0 0; font-size: .8125rem; color: var(--sub); line-height: 1.7; }
+  .src a { word-break: break-all; }
+  .unchecked { display: inline-block; font-size: .6875rem; font-weight: 700; padding: 0 6px; border-radius: 6px; background: var(--warn-soft); color: var(--warn); margin-left: 4px; vertical-align: 1px; }
+
+  footer { margin-top: 24px; padding: 0 6px; font-size: .8125rem; color: var(--sub); }
+  footer p { margin: 6px 0; }
+
+  @media (max-width: 520px) {
+    .tiles { grid-template-columns: repeat(2, 1fr); }
+    section.card { padding: 20px 16px; }
+    .tel-item { flex-wrap: wrap; }
+    .tel-item .tel-btn { margin-left: auto; }
+  }
+  @media print {
+    .jump, .tiles, form.post, .sos-row { display: none !important; }
+    body { background: #fff; }
+    section.card { break-inside: avoid-page; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1><small>SATSUMASENDAI</small>薩摩川内くらしの便利帳</h1>
+    <p class="lead">困ったときにすぐ調べられるように、市の連絡先や暮らしの情報をまとめています。</p>
+    <div class="sos-row">
+      <a class="sos" href="tel:119"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><b>119</b><br>火事・救急</span></a>
+      <a class="sos" href="tel:110"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><b>110</b><br>警察</span></a>
+    </div>
+  </header>
+
+  <nav class="tiles" aria-label="メニュー">
+    <a class="tile is-sos" href="#emergency"><span class="ic" data-icon="phone"></span><b>緊急・相談の<br>電話番号</b></a>
+    <a class="tile" href="#hospital"><span class="ic" data-icon="hospital"></span><b>夜間・休日の<br>病院</b></a>
+    <a class="tile" href="#childcare"><span class="ic" data-icon="home"></span><b>保育園・<br>幼稚園</b></a>
+    <a class="tile" href="#kosodate"><span class="ic" data-icon="heart"></span><b>子育て</b></a>
+    <a class="tile" href="#gomi"><span class="ic" data-icon="trash"></span><b>ごみの<br>出し方</b></a>
+    <a class="tile" href="#requests"><span class="ic" data-icon="chat"></span><b>暮らしの<br>要望</b></a>
+  </nav>
+
+  <nav class="jump" aria-label="ページ内の目次">
+    <a href="#emergency">電話番号</a>
+    <a href="#hospital">夜間・休日の病院</a>
+    <a href="#childcare">保育園・幼稚園</a>
+    <a href="#kosodate">子育て</a>
+    <a href="#gomi">ごみ</a>
+    <a href="#requests">要望</a>
+  </nav>
+
+  <!-- 緊急・相談 -->
+  <section class="card is-sos" id="emergency" aria-labelledby="h-emergency">
+    <h2 id="h-emergency"><span class="ic" data-icon="phone"></span>緊急・相談の電話番号</h2>
+    <p class="about">番号を押すと、そのまま電話がかけられます。</p>
+    <div id="emergency-body"></div>
+  </section>
+
+  <!-- 夜間・休日の病院 -->
+  <section class="card" id="hospital" aria-labelledby="h-hospital">
+    <h2 id="h-hospital"><span class="ic" data-icon="hospital"></span>夜間・休日の病院</h2>
+    <div id="hospital-body"></div>
+  </section>
+
+  <!-- 保育園・幼稚園 -->
+  <section class="card" id="childcare" aria-labelledby="h-childcare">
+    <h2 id="h-childcare"><span class="ic" data-icon="home"></span>保育園・幼稚園</h2>
+    <p class="about" id="childcare-about"></p>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="cc-q" type="search" placeholder="園の名前や町名（例：平佐、樋脇）" aria-label="園の名前や町名でさがす">
+    </div>
+    <div class="chips" id="cc-type" role="group" aria-label="種類"></div>
+    <div class="chips" id="cc-area" role="group" aria-label="地域"></div>
+    <p class="result-count" id="cc-count" aria-live="polite"></p>
+    <ul class="places" id="cc-list"></ul>
+    <button type="button" class="more" id="cc-more" hidden></button>
+    <p class="src" id="cc-src"></p>
+  </section>
+
+  <!-- 子育て -->
+  <section class="card" id="kosodate" aria-labelledby="h-kosodate">
+    <h2 id="h-kosodate"><span class="ic" data-icon="heart"></span>子育て</h2>
+    <div id="kosodate-body"></div>
+  </section>
+
+  <!-- ごみ -->
+  <section class="card" id="gomi" aria-labelledby="h-gomi">
+    <h2 id="h-gomi"><span class="ic" data-icon="trash"></span>ごみの出し方</h2>
+    <div class="seg" role="group" aria-label="地域">
+      <button type="button" data-region="本土" aria-pressed="true">本土</button>
+      <button type="button" data-region="甑島" aria-pressed="false">甑島</button>
+    </div>
+    <dl class="rules" id="gomi-rules"></dl>
+    <h3>ごみ出しカレンダー（<span id="gomi-year"></span>）</h3>
+    <div class="search" style="margin-top:0">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="gomi-q" type="search" placeholder="町名でさがす（例：平佐町、中郷）" aria-label="町名でカレンダーをさがす">
+    </div>
+    <ul class="cal-list" id="gomi-cals"></ul>
+    <div id="gomi-rest"></div>
+  </section>
+
+  <!-- 要望 -->
+  <section class="card" id="requests" aria-labelledby="h-requests">
+    <h2 id="h-requests"><span class="ic" data-icon="chat"></span>暮らしの要望</h2>
+    <p class="about">「こうなったらいいな」を気軽に書いてください。管理者が確認したものから、このページで公開します。</p>
+    <div class="warn-box">
+      <b>投稿する前に</b>
+      <ul>
+        <li>このページへの投稿は、<b>市への正式な要望ではありません</b>。市に届けたいときは、下の「市への正式なご意見の窓口」を使ってください。</li>
+        <li>名前・住所・電話番号など、<b>人がわかることは書かないでください</b>。</li>
+        <li>すぐには公開されません。管理者が確認してから公開します。</li>
+      </ul>
+    </div>
+
+    <div id="req-off" class="empty" hidden>投稿の機能は準備中です。</div>
+    <form class="post" id="req-form" novalidate hidden>
+      <div class="field">
+        <label for="f-nick">ニックネーム<small>なくてもよい・20文字まで</small></label>
+        <input id="f-nick" maxlength="20" autocomplete="off" placeholder="例：平佐のパパ">
+      </div>
+      <div class="field">
+        <label for="f-cat">分野</label>
+        <select id="f-cat" required>
+          <option value="">選んでください</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-body">要望の内容<small>500文字まで</small></label>
+        <textarea id="f-body" maxlength="500" required placeholder="例：〇〇公園に、夏の日よけがあるとうれしいです。"></textarea>
+        <div class="counter" id="f-count">0 / 500</div>
+      </div>
+      <div class="msg" id="f-msg" role="status" hidden></div>
+      <button class="submit" id="f-submit" type="submit">投稿する</button>
+    </form>
+
+    <h3>公開されている要望</h3>
+    <div class="chips" id="req-cat" role="group" aria-label="分野でしぼる"></div>
+    <ul class="posts" id="req-list"></ul>
+    <div class="empty" id="req-empty" hidden></div>
+
+    <h3 id="official-h">市への正式なご意見の窓口</h3>
+    <div id="official-body"></div>
+  </section>
+
+  <footer>
+    <p>このページの情報は、市などのホームページから書き写したものです。内容が変わっていることもあるので、大事なことはかならず元のページや施設に確認してください。<span class="unchecked">未確認</span>の印があるリンクは、まだ開けるか確かめていないものです。</p>
+    <p>このページは個人が作ったもので、薩摩川内市の公式サイトではありません。</p>
+    <p><a href="admin.html">管理者のページ</a></p>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+<script>
+(() => {
+  "use strict";
+
+  // ===== 小さな道具 =====
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+  };
+  const ICONS = {
+    phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+    hospital: '<rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/>',
+    home: '<path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/>',
+    heart: '<path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 22l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/>',
+    trash: '<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 15h10l1-15"/><path d="M10 11v6M14 11v6"/>',
+    chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12z"/>',
+    out: '<path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/>',
+    pin: '<path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>',
+    file: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/>'
+  };
+  const icon = (name, cls = "") => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
+  document.querySelectorAll("[data-icon]").forEach(el => { el.innerHTML = icon(el.dataset.icon); });
+
+  // 電話番号 → tel: のリンク。市外局番のない番号には 0996 を付ける
+  function telHref(number, explicit) {
+    if (explicit) return "tel:" + explicit;
+    const s = String(number).normalize("NFKC").replace(/[\s\-‐－()（）]/g, "");
+    if (s.startsWith("#")) return "tel:" + encodeURIComponent(s);
+    if (/^0\d+$/.test(s)) return "tel:" + s;
+    if (/^\d{5,7}$/.test(s)) return "tel:0996" + s;
+    return "tel:" + s;
+  }
+  const fmtDate = iso => { const [y, m, d] = String(iso).split("-").map(Number); return `${y}年${m}月${d}日`; };
+  const checkedTag = c => c ? "" : '<span class="unchecked">未確認</span>';
+  const yyyymmJST = () => {
+    const d = new Date(Date.now() + 9 * 3600e3);
+    return `${d.getUTCFullYear()}${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
+  };
+  function linkItem(l, main = false) {
+    const url = l.monthly ? l.url.replace(/\/?$/, "/") + yyyymmJST() : l.url;
+    return `<li><a class="link-item ${main ? "is-main" : ""}" href="${esc(url)}" target="_blank" rel="noopener">
+      <span class="body"><b>${esc(l.label)}${checkedTag(l.checked)}</b>${l.note ? `<small>${esc(l.note)}</small>` : ""}</span>${icon("out")}</a></li>`;
+  }
+  function telItem(t, sos = false) {
+    return `<li class="tel-item"><div class="body"><div class="label">${esc(t.label)}</div>${t.note ? `<div class="note">${esc(t.note)}</div>` : ""}</div>
+      <a class="tel-btn ${sos ? "is-sos" : ""}" href="${esc(telHref(t.number ?? t.phone, t.tel))}" aria-label="${esc(t.label)}に電話する（${esc(t.number ?? t.phone)}）">${icon("phone")}${esc(t.number ?? t.phone)}</a></li>`;
+  }
+  function srcLine(list) {
+    const parts = list.filter(s => s.url).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>（${s.checked ? "確認日：" + fmtDate(s.checked) : "未確認"}）`);
+    return parts.length ? "出典：" + parts.join("、") : "";
+  }
+  async function load(name) {
+    const res = await fetch(`data/${name}.json`, { cache: "no-cache" });
+    if (!res.ok) throw new Error(name);
+    return res.json();
+  }
+  const fail = (el, what) => { el.innerHTML = `<div class="empty">${esc(what)}を読み込めませんでした。時間をおいて開き直してください。</div>`; };
+
+  // ===== 緊急・相談 =====
+  load("emergency").then(d => {
+    const groups = ["緊急", "相談", "市役所"];
+    $("#emergency-body").innerHTML = groups.map(g => {
+      const items = d.items.filter(i => i.group === g);
+      if (!items.length) return "";
+      return `<p class="group-label">${esc(g)}</p><ul class="tels">${items.map(i => telItem(i, g === "緊急")).join("")}</ul>`;
+    }).join("") + `<p class="src">${srcLine(d.items.filter(i => i.source_url).map(i => ({ label: i.source, url: i.source_url, checked: i.checked })).filter((s, i, a) => a.findIndex(x => x.url === s.url) === i))}。119・110・118・#9110・189・188 は全国共通の番号です。</p>`;
+  }).catch(() => fail($("#emergency-body"), "電話番号"));
+
+  // ===== 夜間・休日の病院 =====
+  load("hospital").then(d => {
+    $("#hospital-body").innerHTML = `
+      <p class="about">${esc(d.about)}</p>
+      <ul class="links">${d.links.map((l, i) => linkItem(l, i === 0)).join("")}</ul>
+      <h3>受診するときに</h3>
+      <dl class="rules">${d.rules.map(r => `<div class="rule"><dt>${esc(r.label)}</dt><dd>${esc(r.text)}</dd></div>`).join("")}</dl>
+      <h3>子どもの急な病気で迷ったら</h3>
+      <ul class="tels">${telItem({ label: "子どもの急な病気の電話相談（#8000）", number: "#8000", note: "平日・土曜日は19時～翌朝8時、日曜・祝日・年末年始は8時～翌朝8時。つながらないときは 099-254-1186" })}</ul>
+      <h3>問い合わせ</h3>
+      <ul class="tels">${telItem({ label: d.contact.label.replace(/^問い合わせ：/, ""), number: d.contact.phone })}</ul>
+      ${d.related.length ? `<ul class="links">${d.related.map(l => linkItem(l)).join("")}</ul>` : ""}
+      <p class="src">${srcLine([
+        { label: "薩摩川内市「救急当番医」", url: d.rules[0].source_url, checked: d.rules[0].checked },
+        { label: "デジタル広報薩摩川内「救急当番医などのお知らせ」", url: d.rules[1].source_url, checked: d.rules[1].checked }
+      ])}</p>`;
+  }).catch(() => fail($("#hospital-body"), "病院の案内"));
+
+  // ===== 保育園・幼稚園 =====
+  const TYPE_GROUPS = [
+    { key: "認定こども園", label: "認定こども園", types: ["認定こども園"] },
+    { key: "保育所", label: "保育所", types: ["認可保育所"] },
+    { key: "小規模", label: "小規模・事業所内", types: ["小規模保育", "事業所内保育"] },
+    { key: "企業主導型", label: "企業主導型・認可外", types: ["企業主導型保育", "認可外保育"] },
+    { key: "幼稚園", label: "幼稚園", types: ["幼稚園"] },
+    { key: "甑島", label: "甑島", types: ["へき地保育所（甑島）"] }
+  ];
+  const cc = { q: "", type: "", area: "" };
+  const CC_FIRST = 8;
+  let ccMore = false;
+  let ccData = null;
+  const norm = s => String(s ?? "").normalize("NFKC").toLowerCase().replace(/\s+/g, "");
+  function ccMatch(i, ignore) {
+    if (ignore !== "type" && cc.type && !TYPE_GROUPS.find(g => g.key === cc.type).types.includes(i.type)) return false;
+    if (ignore !== "area" && cc.area && i.area !== cc.area) return false;
+    if (cc.q) {
+      const hay = norm([i.name, i.address, i.type, i.area, i.note].join(" "));
+      if (!norm(cc.q).split(/[\s　]+/).filter(Boolean).every(w => hay.includes(norm(w)))) return false;
+    }
+    return true;
+  }
+  function ccChips(box, key, options) {
+    const pool = ccData.items.filter(i => ccMatch(i, key));
+    box.innerHTML = [{ v: "", label: "すべて", n: pool.length }, ...options.map(o => ({ ...o, n: pool.filter(o.test).length }))]
+      .filter(o => o.v === "" || o.n > 0 || o.v === cc[key])
+      .map(o => `<button type="button" class="chip" data-v="${esc(o.v)}" aria-pressed="${o.v === cc[key]}">${esc(o.label)}<span class="n">${o.n}</span></button>`).join("");
+    box.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => { cc[key] = b.dataset.v; ccMore = false; ccRender(); }));
+  }
+  function placeCard(i) {
+    const facts = [];
+    if (i.capacity) facts.push(["定員", i.capacity + (/\d$/.test(i.capacity) ? "人" : "")]);
+    if (i.hours_standard) facts.push(["保育標準時間", i.hours_standard]);
+    if (i.hours_short) facts.push(["保育短時間", i.hours_short]);
+    if (i.open_hours) facts.push(["開所時間", i.open_hours]);
+    if (i.kyoiku_capacity) facts.push(["1号認定（教育）", i.kyoiku_capacity + "人"]);
+    if (i.regional_slot) facts.push(["地域枠", i.regional_slot]);
+    const map = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("薩摩川内市" + i.address.split(/\s/)[0]);
+    return `<li class="place">
+      <div class="top"><span class="badge">${esc(i.type)}</span><span class="badge gray">${esc(i.area)}</span></div>
+      <h4>${esc(i.name)}</h4>
+      <p class="addr">${esc(i.address)}</p>
+      ${facts.length ? `<div class="facts">${facts.map(([k, v]) => `<span class="fact"><b>${esc(k)}</b>${esc(v)}</span>`).join("")}</div>` : ""}
+      ${i.note ? `<p class="note">${esc(i.note)}</p>` : ""}
+      <div class="acts">
+        ${i.phone ? `<a class="tel-btn" href="${esc(telHref(i.phone))}" aria-label="${esc(i.name)}に電話する（${esc(i.phone)}）">${icon("phone")}${esc(i.phone)}</a>` : ""}
+        <a class="btn-soft" href="${esc(map)}" target="_blank" rel="noopener">${icon("pin")}地図</a>
+      </div>
+    </li>`;
+  }
+  function ccRender() {
+    const areas = [...new Set(ccData.items.map(i => i.area))];
+    ccChips($("#cc-type"), "type", TYPE_GROUPS.map(g => ({ v: g.key, label: g.label, test: i => g.types.includes(i.type) })));
+    ccChips($("#cc-area"), "area", areas.map(a => ({ v: a, label: a, test: i => i.area === a })));
+    const list = ccData.items.filter(i => ccMatch(i));
+    $("#cc-count").textContent = `${list.length}か所`;
+    const shown = ccMore ? list : list.slice(0, CC_FIRST);
+    $("#cc-list").innerHTML = list.length ? shown.map(placeCard).join("")
+      : `<li class="empty">見つかりませんでした。条件をゆるめてみてください。</li>`;
+    const more = $("#cc-more");
+    more.hidden = ccMore || list.length <= CC_FIRST;
+    more.textContent = `残り${list.length - CC_FIRST}か所も見る`;
+  }
+  load("childcare").then(d => {
+    ccData = d;
+    $("#childcare-about").textContent = d.about;
+    $("#cc-src").innerHTML = srcLine(d.sources);
+    $("#cc-q").addEventListener("input", e => { cc.q = e.target.value.trim(); ccMore = false; ccRender(); });
+    $("#cc-more").addEventListener("click", () => { ccMore = true; ccRender(); });
+    ccRender();
+  }).catch(() => fail($("#cc-list"), "保育園・幼稚園の一覧"));
+
+  // ===== 子育て =====
+  load("kosodate").then(d => {
+    $("#kosodate-body").innerHTML = `
+      <h3 style="margin-top:14px">地域子育て支援センター</h3>
+      <p class="about">${esc(d.centers_about)}</p>
+      <ul class="tels">${d.centers.map(c => telItem({ label: c.name, number: c.phone, note: [c.place, c.address].filter(Boolean).join("・") })).join("")}</ul>
+      <p class="src">${srcLine([d.centers_source])}</p>
+      <h3>そのほかの子育ての案内</h3>
+      <ul class="links">${d.links.map(l => linkItem(l)).join("")}</ul>`;
+  }).catch(() => fail($("#kosodate-body"), "子育ての案内"));
+
+  // ===== ごみ =====
+  let gomi = null, region = "本土";
+  function gomiRender() {
+    $("#gomi-rules").innerHTML = gomi.rules.filter(r => r.region === region)
+      .map(r => `<div class="rule"><dt>${esc(r.label)}</dt><dd>${esc(r.text)}</dd></div>`).join("");
+    const raw = norm($("#gomi-q").value.trim());
+    const townOnly = raw.endsWith("町");          // 「平佐町」のように町まで書いたら、町名だけでさがす
+    const q = raw.replace(/町$/, "");
+    const towns = c => c.towns.split("、").map(norm);
+    const cals = gomi.calendars.filter(c => !q ? c.region === region
+      : townOnly ? towns(c).some(t => t.startsWith(q + "町") || t === q)
+      : norm(c.district + c.towns).includes(q));
+    const hi = s => {
+      if (!q) return esc(s);
+      return esc(s).split("、").map(t => norm(t).includes(q) ? `<mark>${t}</mark>` : t).join("、");
+    };
+    $("#gomi-cals").innerHTML = cals.length ? cals.map(c => `<li class="cal"><div class="body"><b>${esc(c.district)}${q && c.region === "甑島" ? "（甑島）" : ""}</b><small>${hi(c.towns)}</small></div>
+      <a class="pdf-btn" href="${esc(c.url)}" target="_blank" rel="noopener" aria-label="${esc(c.district)}のごみ出しカレンダー（PDF）">${icon("file")}PDF</a></li>`).join("")
+      : `<li class="empty">見つかりませんでした。町名の一部（例：「平佐」）で試してください。</li>`;
+  }
+  load("gomi").then(d => {
+    gomi = d;
+    $("#gomi-year").textContent = d.year;
+    const b = d.bulky;
+    $("#gomi-rest").innerHTML = `
+      <h3>分別ハンドブック（PDF）</h3>
+      <div class="hb">${d.handbooks.map(h => `<a class="btn-soft" href="${esc(h.url)}" target="_blank" rel="noopener">${icon("file")}${esc(h.label)}<small style="color:var(--sub);font-weight:500">${esc(h.size)}</small></a>`).join("")}</div>
+      <h3>${esc(b.title)}</h3>
+      <p class="about" style="color:inherit">${esc(b.text)}</p>
+      <table class="fees"><caption class="about" style="text-align:left;caption-side:top">家庭のごみを持ち込むときの手数料</caption>
+        ${b.fees.map(f => `<tr><th scope="row">${esc(f.label)}</th><td>${esc(f.fee)}</td></tr>`).join("")}</table>
+      <p class="about">${esc(b.unknown)}</p>
+      <ul class="tels">${telItem({ label: b.contact.label.replace(/^問い合わせ：/, ""), number: b.contact.phone })}</ul>
+      <h3>市のページ</h3>
+      <ul class="links">${d.links.map(l => linkItem(l)).join("")}</ul>
+      <p class="src">${srcLine(d.links.filter(l => l.checked))}</p>`;
+    document.querySelectorAll(".seg button").forEach(btn => btn.addEventListener("click", () => {
+      region = btn.dataset.region;
+      document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x === btn)));
+      $("#gomi-q").value = "";
+      gomiRender();
+    }));
+    $("#gomi-q").addEventListener("input", gomiRender);
+    gomiRender();
+  }).catch(() => fail($("#gomi-cals"), "ごみの案内"));
+
+  // ===== 市への正式な窓口 =====
+  load("requests_links").then(d => {
+    $("#official-body").innerHTML = `<ul class="links">${d.links.map((l, i) => linkItem(l, i === 0)).join("")}</ul><p class="about">${esc(d.letter)}</p>`;
+  }).catch(() => fail($("#official-body"), "窓口の案内"));
+
+  // ===== 要望（Supabase） =====
+  const CATEGORIES = ["子育て", "医療・福祉", "道路・交通", "ごみ・環境", "防災", "施設・公園", "その他"];
+  const COOLDOWN_MS = 60 * 1000;
+  const cfg = window.APP_CONFIG || {};
+  const keyLooksSecret = k => {
+    if (/^sb_secret_/.test(k)) return true;
+    try { return JSON.parse(atob(k.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).role === "service_role"; } catch { return false; }
+  };
+  let db = null;
+  if (!cfg.SUPABASE_URL || !cfg.SUPABASE_KEY) {
+    $("#req-off").hidden = false;
+    $("#req-off").textContent = "投稿の機能は準備中です（Supabase の設定がまだです）。";
+  } else if (keyLooksSecret(cfg.SUPABASE_KEY)) {
+    $("#req-off").hidden = false;
+    $("#req-off").textContent = "設定に service_role（secret）の鍵が書かれています。とても危険なので動かしていません。config.js を公開用の鍵（anon / publishable）に直してください。";
+  } else if (!window.supabase) {
+    $("#req-off").hidden = false;
+    $("#req-off").textContent = "投稿の機能を読み込めませんでした。時間をおいて開き直してください。";
+  } else {
+    db = window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_KEY, { auth: { persistSession: false } });
+    $("#req-form").hidden = false;
+  }
+
+  $("#f-cat").insertAdjacentHTML("beforeend", CATEGORIES.map(c => `<option>${esc(c)}</option>`).join(""));
+  const body = $("#f-body"), counter = $("#f-count"), msg = $("#f-msg");
+  body.addEventListener("input", () => {
+    const n = [...body.value].length;
+    counter.textContent = `${n} / 500`;
+    counter.classList.toggle("over", n > 500);
+  });
+  const say = (text, ok) => { msg.hidden = false; msg.className = "msg " + (ok ? "ok" : "ng"); msg.textContent = text; };
+  // 電話番号やメールアドレスらしきものが書かれていたら止める
+  const looksPersonal = s => /[\w.+-]+@[\w-]+\.[\w.]+/.test(s) || /0\d{1,4}[-ー－\s]?\d{1,4}[-ー－\s]?\d{3,4}/.test(s.normalize("NFKC"));
+
+  $("#req-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    if (!db) return;
+    const nickname = $("#f-nick").value.trim();
+    const category = $("#f-cat").value;
+    const text = body.value.trim();
+    if (!category) return say("分野を選んでください。", false);
+    if (!text) return say("要望の内容を書いてください。", false);
+    if ([...text].length > 500) return say("内容は500文字までです。", false);
+    if ([...nickname].length > 20) return say("ニックネームは20文字までです。", false);
+    if (looksPersonal(text + " " + nickname)) return say("電話番号やメールアドレスのようなものが入っています。人がわかることは書かないでください。", false);
+    const last = Number(store.get("req-last") || 0);
+    if (Date.now() - last < COOLDOWN_MS) return say("続けての投稿は、1分ほどあけてください。", false);
+
+    const btn = $("#f-submit");
+    btn.disabled = true; btn.textContent = "送っています…";
+    // 確認待ちとして保存される（状態は送らない。データベースの決まりで pending になる）
+    const { error } = await db.from("requests").insert({ nickname: nickname || null, category, body: text });
+    btn.disabled = false; btn.textContent = "投稿する";
+    if (error) { console.error(error); return say("送れませんでした。時間をおいて、もう一度ためしてください。", false); }
+    store.set("req-last", String(Date.now()));
+    $("#req-form").reset(); counter.textContent = "0 / 500";
+    say("ありがとうございます。受け付けました。管理者が確認してから、このページで公開します。", true);
+  });
+
+  // 公開されている要望
+  let posts = [], reqCat = "";
+  function postsRender() {
+    const box = $("#req-cat");
+    const cats = CATEGORIES.filter(c => posts.some(p => p.category === c));
+    box.innerHTML = posts.length ? [["", "すべて", posts.length], ...cats.map(c => [c, c, posts.filter(p => p.category === c).length])]
+      .map(([v, l, n]) => `<button type="button" class="chip" data-v="${esc(v)}" aria-pressed="${v === reqCat}">${esc(l)}<span class="n">${n}</span></button>`).join("") : "";
+    box.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => { reqCat = b.dataset.v; postsRender(); }));
+    const list = posts.filter(p => !reqCat || p.category === reqCat);
+    $("#req-list").innerHTML = list.map(p => `<li class="post-item">
+      <div class="meta"><span class="badge">${esc(p.category)}</span><span>${esc(p.nickname || "ニックネームなし")}</span><span>${esc(new Date(p.created_at).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" }))}</span></div>
+      <p>${esc(p.body)}</p></li>`).join("");
+    const empty = $("#req-empty");
+    empty.hidden = list.length > 0;
+    empty.textContent = posts.length ? "この分野の要望はまだありません。" : "公開されている要望は、まだありません。";
+  }
+  if (db) {
+    db.from("requests").select("id, created_at, nickname, category, body").eq("status", "published")
+      .order("created_at", { ascending: false }).limit(100)
+      .then(({ data, error }) => {
+        if (error) { console.error(error); $("#req-empty").hidden = false; $("#req-empty").textContent = "要望を読み込めませんでした。"; return; }
+        posts = data || []; postsRender();
+      });
+  } else {
+    $("#req-empty").hidden = false;
+    $("#req-empty").textContent = "公開されている要望は、まだありません。";
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "title": "子育て",
+  "centers_about": "0歳～就学前の子どもと家族が遊んだり、子育ての相談をしたりできる場所です。開いている日と時間は各センターに確認してください。",
+  "centers_source": { "label": "地域子育て支援センター（薩摩川内市、2023年7月31日更新）", "url": "https://www.city.satsumasendai.lg.jp/soshiki/1026/1/1/2/1589.html", "checked": "2026-11-12" },
+  "centers": [
+    { "name": "すくすくランド", "place": "育英保育園内", "address": "中郷四丁目187", "phone": "0996-22-5800" },
+    { "name": "ほっとランド", "place": "清水丘保育園内", "address": "宮里町3048-9", "phone": "0996-22-8313" },
+    { "name": "ぱぴぃら", "place": "認定こども園純心幼稚園内", "address": "隈之城町1001", "phone": "0996-25-1815" },
+    { "name": "すわっこ", "place": "認定こども園すわこども園内", "address": "樋脇町市比野550", "phone": "0996-38-1193" },
+    { "name": "スマイリィ", "place": "認定こども園青山幼稚園内", "address": "青山町4194", "phone": "0996-20-0775" },
+    { "name": "おいでおいで", "place": "", "address": "西向田町18-26", "phone": "0996-20-6682" },
+    { "name": "ぽけっと", "place": "認定こども園せんだい幼稚園", "address": "平佐町3669-1", "phone": "080-2779-6723" },
+    { "name": "てとて", "place": "認定こども園川内すわこども園内", "address": "御陵下町19-5", "phone": "0996-20-2630" }
+  ],
+  "links": [
+    { "label": "放課後児童クラブの一覧", "url": "https://www.city.satsumasendai.lg.jp/soshiki/1026/1/1/3/1595.html", "note": "申し込みは、希望する児童クラブに直接", "checked": "" },
+    { "label": "放課後児童クラブの一覧（PDF）", "url": "https://www.city.satsumasendai.lg.jp/material/files/group/20/houkagojidoukurabu.pdf", "note": "", "checked": "" },
+    { "label": "ファミリー・サポート・センター薩摩川内", "url": "https://www.city.satsumasendai.lg.jp/soshiki/1026/1/1/3/149.html", "note": "子どもの送り迎えや預かりを、地域で助け合う仕組み", "checked": "" },
+    { "label": "児童福祉・ひとり親福祉（病児保育など）", "url": "https://www.city.satsumasendai.lg.jp/kosodate_kyoiku/kosodate/5/index.html", "note": "", "checked": "" },
+    { "label": "こども誰でも通園制度の実施施設", "url": "https://www.city.satsumasendai.lg.jp/20250808/19291.html", "note": "", "checked": "" },
+    { "label": "さつませんだい こそだてサポートネット（支援センターだより）", "url": "https://www.kosodate-support-satsumasendai.jp/support/619/", "note": "", "checked": "" },
+    { "label": "子育ての相談案内（利用者支援）", "url": "https://www.kosodate-support-satsumasendai.jp/support/1118/", "note": "", "checked": "" }
+  ]
+}

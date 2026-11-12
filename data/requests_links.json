@@ -1,0 +1,9 @@
+{
+  "title": "市への正式なご意見の窓口",
+  "links": [
+    { "label": "ご意見・お問い合わせ（メールフォーム）", "url": "https://www.city.satsumasendai.lg.jp/soshiki/1042/2/11-2/1/1979.html", "note": "市への正式なご意見はこちらから", "checked": "" },
+    { "label": "市民の声", "url": "https://www.city.satsumasendai.lg.jp/gyoseijoho/kocho/7/index.html", "note": "寄せられた意見と市の回答も公表されています", "checked": "" },
+    { "label": "eまちアンケート", "url": "https://www.city.satsumasendai.lg.jp/soshiki/1042/2/11-2/7/2987.html", "note": "", "checked": "" }
+  ],
+  "letter": "「市長への手紙」は、メールフォームか、市役所各庁舎のご意見箱に専用の用紙を入れて出せます。"
+}
